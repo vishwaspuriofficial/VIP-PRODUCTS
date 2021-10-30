@@ -1,7 +1,6 @@
 def app():
     import streamlit as st
     from transformers import pipeline
-    from threading import Thread
     import time
     import clipboard
 
