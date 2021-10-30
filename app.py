@@ -15,7 +15,7 @@ st.title("Multi-page Application")
 # Add all your applications (pages) here
 app.add_page("Home", home.app)
 app.add_page("Summarizer", vip_summarizer.app)
-app.add_page("QR", vip_qr.app)
+# app.add_page("QR", vip_qr.app)
 
 # The main app
 app.run()
