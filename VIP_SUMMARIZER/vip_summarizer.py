@@ -1,13 +1,19 @@
-
 def app():
     import streamlit as st
-    from summarizer import Summarizer
+    from transformers import pipeline
     from threading import Thread
     import time
     import clipboard
 
+    def summary(text):
+        summarizer = pipeline("summarization")
 
+        summarized = summarizer(text, min_length=25, max_length=300)
 
+        for i in summarized:
+            for j in i:
+                result = i[j]
+                return result
 
     col1, col2 = st.columns(2)
 
@@ -29,18 +35,16 @@ def app():
         elif len(text) <=50:
             col1.error("Error! Insufficient text for summary.")
         else:
-            # try:
-            with st.spinner('Summarizing...'):
-                model = Summarizer()
-
-                result = model(text, min_length=60)
-            if result == "":
-                raise TypeError
-            state.b = output.text_area("Summarized Text: ", value=result, height=200, key="output_final")
-            clipboard.copy(state.b)
-            st.success("Output copied to clipboard!")
-        # except:
-            #     c1.error("Error! Text could not be summarized.")
+            try:
+                with st.spinner('Summarizing...'):
+                    result = summary(text)
+                if result == "":
+                    raise TypeError
+                state.b = output.text_area("Summarized Text: ", value=result, height=200, key="output_final")
+                clipboard.copy(state.b)
+                st.success("Output copied to clipboard!")
+            except:
+                c1.error("Error! Text could not be summarized.")
 
     time.sleep(2)
     c1.write("")
