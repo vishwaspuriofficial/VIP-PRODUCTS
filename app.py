@@ -2,7 +2,6 @@ import streamlit as st
 st.set_page_config(layout="wide")
 # Custom imports
 from pages import MultiPage
-from VIP_PRODUCTS import VIP_SUMMARIZER
 from VIP_SUMMARIZER import vip_summarizer
 from VIP_QR import vip_qr
 import home
