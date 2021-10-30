@@ -3,7 +3,7 @@ st.set_page_config(layout="wide")
 # Custom imports
 from pages import MultiPage
 from VIP_SUMMARIZER import vip_summarizer
-from VIP_QR import vip_qr
+#from VIP_QR import vip_qr
 import home
 
 # Create an instance of the app
