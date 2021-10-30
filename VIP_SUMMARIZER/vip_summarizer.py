@@ -30,9 +30,9 @@ def app():
     b = output.text_area("Summarized Text: ", height=200, key="output_placeholder")
     if summarize:
         if text == "":
-            col1.error("Error! No text entered.")
+            st.error("Error! No text entered.")
         elif len(text) <=50:
-            col1.error("Error! Insufficient text for summary.")
+            st.error("Error! Insufficient text for summary.")
         else:
             try:
                 with st.spinner('Summarizing...'):
@@ -43,7 +43,7 @@ def app():
                 clipboard.copy(state.b)
                 st.success("Output copied to clipboard!")
             except:
-                c1.error("Error! Text could not be summarized.")
+                st.error("Error! Text could not be summarized.")
 
     time.sleep(2)
     c1.write("")
