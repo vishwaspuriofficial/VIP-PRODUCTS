@@ -3,6 +3,7 @@ def app():
     from transformers import pipeline
     import time
     #import clipboard
+    import pyperclip
 
     def summary(text):
         summarizer = pipeline("summarization")
@@ -40,8 +41,8 @@ def app():
                 if result == "":
                     raise TypeError
                 state.b = output.text_area("Summarized Text: ", value=result, height=200, key="output_final")
-                #clipboard.copy(state.b)
-                st.success("Output copied to clipboard!")
+                pyperclip.copy(state.b)
+                #st.success("Output copied to clipboard!")
             except:
                 st.error("Error! Text could not be summarized.")
                 #st.exception(RuntimeError)
