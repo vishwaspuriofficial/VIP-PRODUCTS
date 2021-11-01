@@ -44,6 +44,8 @@ def app():
                 st.success("Output copied to clipboard!")
             except:
                 st.error("Error! Text could not be summarized.")
+                e = RuntimeError('This is an exception of type RuntimeError')
+                st.exception(e)
 
     time.sleep(2)
     c1.write("")
