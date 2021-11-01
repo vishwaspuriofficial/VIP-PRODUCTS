@@ -2,7 +2,7 @@ def app():
     import streamlit as st
     from transformers import pipeline
     import time
-    import clipboard
+    #import clipboard
 
     def summary(text):
         summarizer = pipeline("summarization")
@@ -40,11 +40,11 @@ def app():
                 if result == "":
                     raise TypeError
                 state.b = output.text_area("Summarized Text: ", value=result, height=200, key="output_final")
-                clipboard.copy(state.b)
+                #clipboard.copy(state.b)
                 st.success("Output copied to clipboard!")
             except:
                 st.error("Error! Text could not be summarized.")
-                st.exception(RuntimeError)
+                #st.exception(RuntimeError)
 
     time.sleep(2)
     c1.write("")

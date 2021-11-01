@@ -1,6 +1,6 @@
 def app():
     import streamlit as st
-    st.title("HOME")
+    st.title("Loading...")
 
 
 
