@@ -7,3 +7,6 @@ sumy==0.8.1
 nltk==3.5
 fastapi==0.61.2
 wordcloud==1.8.1
+neattext==0.1.0
+matplotlib==3.3.4
+sumy==0.8.1
