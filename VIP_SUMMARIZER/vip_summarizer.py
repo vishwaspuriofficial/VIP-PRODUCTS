@@ -56,7 +56,7 @@ def app():
     import streamlit as st
     from gensim.summarization import summarize
     import time
-    # import clipboard
+    import clipboard
 
     col1, col2 = st.columns(2)
 
@@ -84,11 +84,11 @@ def app():
                     time.sleep(1)
                 if result == "":
                     raise TypeError
-                state.b = output.text_area("Summarized Text: ", value=result, height=200, key="output_final")
-                # clipboard.copy(state.b)
-                # st.success("Output copied to clipboard!")
+                output = output.text_area("Summarized Text: ", value=result, height=200, key="output_final")
+
             except:
                 st.error("Error! Text could not be summarized.")
+
 
 
     time.sleep(2)
