@@ -89,6 +89,7 @@ def app():
 				# st.success("Output copied to clipboard!")
 			except:
 				st.error("Error! Text could not be summarized.")
+                st.exception()
 
 	time.sleep(2)
 	c1.write("")
