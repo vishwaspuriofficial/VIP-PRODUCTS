@@ -78,18 +78,18 @@ def app():
 		elif len(text) <=50:
 			st.error("Error! Insufficient text for summary.")
 		else:
-			try:
-				with st.spinner('Summarizing...'):
-					result = summarize(text)
-					st.write(result)
-				if result == "":
-					raise TypeError
-				state.b = output.text_area("Summarized Text: ", value=result, height=200, key="output_final")
+			# try:
+            with st.spinner('Summarizing...'):
+                result = summarize(text)
+                st.write(result)
+            if result == "":
+                raise TypeError
+            state.b = output.text_area("Summarized Text: ", value=result, height=200, key="output_final")
 				# clipboard.copy(state.b)
 				# st.success("Output copied to clipboard!")
-			except:
-				st.error("Error! Text could not be summarized.")
-                st.exception()
+			# except:
+			# 	st.error("Error! Text could not be summarized.")
+
 
 	time.sleep(2)
 	c1.write("")
