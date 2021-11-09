@@ -56,7 +56,6 @@ def app():
     import streamlit as st
     from gensim.summarization import summarize
     import time
-    import clipboard
 
     col1, col2 = st.columns(2)
 
