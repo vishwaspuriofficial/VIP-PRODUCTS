@@ -3,7 +3,6 @@ def app():
     import qrcode
     from PIL import Image
     import numpy as np
-    import cv2
 
     text = st.text_input('Make a QR code of:')
     a = st.button("Create QR Code")
