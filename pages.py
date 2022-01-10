@@ -30,8 +30,10 @@ class MultiPage:
             ind = 0
             if page == "summarizer":
                 ind = 1
-            elif page == "qr":
+            elif page == "QRDetector":
                 ind = 2
+            elif page == "QRMaker":
+                ind = 3
             else:
                 ind = 0
         except:
