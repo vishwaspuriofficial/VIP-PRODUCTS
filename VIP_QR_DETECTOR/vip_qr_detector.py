@@ -1,9 +1,9 @@
 def app():
     import streamlit as st
-    import pyzbar.pyzbar as pyzbar
+    import pyzbar#.pyzbar as pyzbar
     import webbrowser
     import time
-    #
+    import cv2
     # st.set_page_config(layout="wide")
     col = st.empty()
 
@@ -30,7 +30,7 @@ def app():
         def recv(self, frame: av.VideoFrame) -> av.VideoFrame:
             img = frame.to_ndarray(format="bgr24")
 
-            font = cv2.FONT_HERSHEY_PLAIN
+            # font = cv2.FONT_HERSHEY_PLAIN
             barcodes = pyzbar.decode(img)
             for barcode in barcodes:
                 x, y, w, h = barcode.rect
@@ -39,9 +39,9 @@ def app():
                 print(barcode)
 
                 if barcode.type == "QRCODE":
-                    # cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
-                    # font = cv2.FONT_HERSHEY_DUPLEX
-                    # cv2.putText(img, data, (30, 50), font, 0.5, (255, 255, 255), 1)
+                    cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+                    font = cv2.FONT_HERSHEY_DUPLEX
+                    cv2.putText(img, data, (30, 50), font, 0.5, (255, 255, 255), 1)
                     webbrowser.open(data)
                     time.sleep(5)
 
