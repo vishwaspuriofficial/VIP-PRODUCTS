@@ -12,3 +12,4 @@ matplotlib==3.3.4
 nltk==3.5
 qrcode==7.3.1
 pyzbar==0.1.8 
+myqr==2.3.1
