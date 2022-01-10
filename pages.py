@@ -32,7 +32,7 @@ class MultiPage:
                 ind = 1
             elif page == "QRDetector":
                 ind = 2
-            elif page == "QRMaker":
+            elif page == "QRGenerator":
                 ind = 3
             else:
                 ind = 0
