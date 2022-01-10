@@ -1,6 +1,5 @@
 def app():
     import streamlit as st
-    import cv2
     import pyzbar.pyzbar as pyzbar
     import webbrowser
     import time
